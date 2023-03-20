@@ -1,29 +1,33 @@
 import random
 
-destinations = ['New York', 'London', 'Rome', 'Barcelona']
-restaurants = ['JJs Pizza', 'Gordos', 'Le Calandre', 'Alkimia']
-transportation = ['Plane', 'Cruise', 'Train', 'Car']
-entertainment = ['Knicks Game', 'Theater', 'Ballet', 'Art show']
+def generate_trip():
+    destinations = ['New York', 'London', 'Rome', 'Barcelona']
+    restaurants = ['JJs Pizza', 'Gordos', 'Le Calandre', 'Alkimia']
+    transportations = ['Plane', 'Cruise', 'Train', 'Car']
+    entertainments = ['Knicks Game', 'Theater', 'Ballet', 'Art show']
 
-for destination in destinations:
-    print(destination)
-for restaurant in restaurants:
-    print(restaurant)
-for transport in transportation:
-    print(transport)
-for mode in entertainment:
-    print(mode)
 
-print = input('Are you satisfied with your trip?' 'Y/N')
+    destination = random.choice(destinations)
+    restaurant =random.choice(restaurants)
+    transportation = random.choice(transportations)
+    entertainment = random.choice(entertainments)
 
-random = destination = random.choice(destinations)
-random = restaurant =random.choice(restaurants)
-random = transport = random.choice(transportation)
-random = mode = random.choice(entertainment)
+    trip = [destination, restaurant, transportation, entertainment]
+    return trip
+
+
+def display_trip(selections_list):
+    print()
+    for selection in selections_list:
+        print(selection)
+    print()
+
 user_response = 'N'
 
-if user_response != 'Y':
-    print = random.choice (destination, restaurant, transport, mode)
+while user_response != 'Y':
+    trip = generate_trip()
+    display_trip(trip)
+    user_response = input('Are you satisfied with your trip?' 'Y/N')
 
 if user_response == 'Y':
     print('Enjoy your trip!')
